@@ -1,0 +1,36 @@
+specVersion: 0.0.2
+schema:
+  file: schema.graphql
+dataSources:
+  - kind: ethereum
+    name: Contract
+    network: mumbai
+    source:
+      address: "0xf27C4d5551a9127D649E2b99f6Ffa9604B85973d"
+      abi: Contract
+      startBlock: 25223393
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - DataFeedFunded
+        - NewDataFeed
+        - OneTimeTipClaimed
+        - TipAdded
+        - TipClaimed
+      abis:
+        - name: Contract
+          file: Contract/abis/Contract.json
+      eventHandlers:
+        - event: DataFeedFunded(bytes32,bytes32,uint256)
+          handler: handleDataFeedFunded
+        - event: NewDataFeed(address,bytes32,bytes32,bytes)
+          handler: handleNewDataFeed
+        - event: OneTimeTipClaimed(bytes32,address,uint256)
+          handler: handleOneTimeTipClaimed
+        - event: TipAdded(address,bytes32,uint256,bytes)
+          handler: handleTipAdded
+        - event: TipClaimed(bytes32,bytes32,address,uint256)
+          handler: handleTipClaimed
+      file: Contract/Contract.wasm
