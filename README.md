@@ -1,1 +1,1 @@
-# subgraph-autopay-mumbai
+# tellor-autopay-mumbaih-graph
