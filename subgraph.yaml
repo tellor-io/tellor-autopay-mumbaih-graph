@@ -19,6 +19,7 @@ dataSources:
         - OneTimeTipClaimed
         - TipAdded
         - TipClaimed
+        - DataFeed
       abis:
         - name: Contract
           file: ./abis/Contract.json
