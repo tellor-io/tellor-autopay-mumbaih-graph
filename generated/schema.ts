@@ -437,4 +437,13 @@ export class DataFeedEntity extends Entity {
   set _queryData(value: Bytes) {
     this.set("_queryData", Value.fromBytes(value));
   }
+
+  get txnHash(): Bytes {
+    let value = this.get("txnHash");
+    return value!.toBytes();
+  }
+
+  set txnHash(value: Bytes) {
+    this.set("txnHash", Value.fromBytes(value));
+  }
 }
