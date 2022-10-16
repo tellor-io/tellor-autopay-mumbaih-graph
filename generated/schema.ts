@@ -429,6 +429,15 @@ export class DataFeedEntity extends Entity {
     this.set("_priceThreshold", Value.fromBigInt(value));
   }
 
+  get _rewardIncreasePerSecond(): BigInt {
+    let value = this.get("_rewardIncreasePerSecond");
+    return value!.toBigInt();
+  }
+
+  set _rewardIncreasePerSecond(value: BigInt) {
+    this.set("_rewardIncreasePerSecond", Value.fromBigInt(value));
+  }
+
   get _queryData(): Bytes {
     let value = this.get("_queryData");
     return value!.toBytes();
@@ -436,6 +445,15 @@ export class DataFeedEntity extends Entity {
 
   set _queryData(value: Bytes) {
     this.set("_queryData", Value.fromBytes(value));
+  }
+
+  get _amount(): BigInt {
+    let value = this.get("_amount");
+    return value!.toBigInt();
+  }
+
+  set _amount(value: BigInt) {
+    this.set("_amount", Value.fromBigInt(value));
   }
 
   get txnHash(): Bytes {
