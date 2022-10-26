@@ -6,7 +6,7 @@ dataSources:
     name: Contract
     network: mumbai
     source:
-      address: "0x7B49420008BcA14782F2700547764AdAdD54F813"
+      address: "0xA33ca1062762c8591E29E65bf7aC7ae8EC88b183"
       abi: Contract
       startBlock: 25223393
     mapping:
@@ -24,14 +24,14 @@ dataSources:
         - name: Contract
           file: ./abis/Contract.json
       eventHandlers:
-        - event: DataFeedFunded(bytes32,bytes32,uint256,address)
+        - event: DataFeedFunded(indexed bytes32,indexed bytes32,indexed uint256,address,(uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256))
           handler: handleDataFeedFunded
-        - event: NewDataFeed(bytes32,bytes32,bytes,address)
+        - event: NewDataFeed(indexed bytes32,indexed bytes32,bytes,address)
           handler: handleNewDataFeed
-        - event: OneTimeTipClaimed(bytes32,uint256,address)
+        - event: OneTimeTipClaimed(indexed bytes32,indexed uint256,indexed address)
           handler: handleOneTimeTipClaimed
-        - event: TipAdded(bytes32,uint256,bytes,address)
+        - event: TipAdded(indexed bytes32,indexed uint256,bytes,address)
           handler: handleTipAdded
-        - event: TipClaimed(bytes32,bytes32,uint256,address)
+        - event: TipClaimed(indexed bytes32,indexed bytes32,indexed uint256,address)
           handler: handleTipClaimed
       file: ./src/mapping.ts
