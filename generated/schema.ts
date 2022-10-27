@@ -392,7 +392,6 @@ export class DataFeedEntity extends Entity {
     this.set("_interval", Value.fromBigInt(BigInt.zero()));
     this.set("_window", Value.fromBigInt(BigInt.zero()));
     this.set("_priceThreshold", Value.fromBigInt(BigInt.zero()));
-    this.set("_rewardIncreasePerSecond", Value.fromBigInt(BigInt.zero()));
     this.set("_queryData", Value.fromBytes(Bytes.empty()));
     this.set("_amount", Value.fromBigInt(BigInt.zero()));
     this.set("txnHash", Value.fromBytes(Bytes.empty()));
@@ -467,15 +466,6 @@ export class DataFeedEntity extends Entity {
 
   set _priceThreshold(value: BigInt) {
     this.set("_priceThreshold", Value.fromBigInt(value));
-  }
-
-  get _rewardIncreasePerSecond(): BigInt {
-    let value = this.get("_rewardIncreasePerSecond");
-    return value!.toBigInt();
-  }
-
-  set _rewardIncreasePerSecond(value: BigInt) {
-    this.set("_rewardIncreasePerSecond", Value.fromBigInt(value));
   }
 
   get _queryData(): Bytes {
