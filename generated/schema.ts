@@ -241,6 +241,8 @@ export class TipAddedEntity extends Entity {
     this.set("_amount", Value.fromBigInt(BigInt.zero()));
     this.set("_queryData", Value.fromBytes(Bytes.empty()));
     this.set("_tipper", Value.fromBytes(Bytes.empty()));
+    this.set("_startTime", Value.fromBigInt(BigInt.zero()));
+    this.set("txnHash", Value.fromBytes(Bytes.empty()));
   }
 
   save(): void {
@@ -303,6 +305,24 @@ export class TipAddedEntity extends Entity {
 
   set _tipper(value: Bytes) {
     this.set("_tipper", Value.fromBytes(value));
+  }
+
+  get _startTime(): BigInt {
+    let value = this.get("_startTime");
+    return value!.toBigInt();
+  }
+
+  set _startTime(value: BigInt) {
+    this.set("_startTime", Value.fromBigInt(value));
+  }
+
+  get txnHash(): Bytes {
+    let value = this.get("txnHash");
+    return value!.toBytes();
+  }
+
+  set txnHash(value: Bytes) {
+    this.set("txnHash", Value.fromBytes(value));
   }
 }
 
@@ -393,7 +413,6 @@ export class DataFeedEntity extends Entity {
     this.set("_window", Value.fromBigInt(BigInt.zero()));
     this.set("_priceThreshold", Value.fromBigInt(BigInt.zero()));
     this.set("_queryData", Value.fromBytes(Bytes.empty()));
-    this.set("_amount", Value.fromBigInt(BigInt.zero()));
     this.set("txnHash", Value.fromBytes(Bytes.empty()));
   }
 
@@ -475,15 +494,6 @@ export class DataFeedEntity extends Entity {
 
   set _queryData(value: Bytes) {
     this.set("_queryData", Value.fromBytes(value));
-  }
-
-  get _amount(): BigInt {
-    let value = this.get("_amount");
-    return value!.toBigInt();
-  }
-
-  set _amount(value: BigInt) {
-    this.set("_amount", Value.fromBigInt(value));
   }
 
   get txnHash(): Bytes {
