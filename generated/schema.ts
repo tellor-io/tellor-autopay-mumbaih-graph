@@ -8,7 +8,7 @@ import {
   store,
   Bytes,
   BigInt,
-  BigDecimal
+  BigDecimal,
 } from "@graphprotocol/graph-ts";
 
 export class DataFeedFundedEntity extends Entity {
@@ -23,7 +23,7 @@ export class DataFeedFundedEntity extends Entity {
     if (id) {
       assert(
         id.kind == ValueKind.STRING,
-        `Entities of type DataFeedFundedEntity must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
+        `Entities of type DataFeedFundedEntity must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`,
       );
       store.set("DataFeedFundedEntity", id.toString(), this);
     }
@@ -31,13 +31,13 @@ export class DataFeedFundedEntity extends Entity {
 
   static loadInBlock(id: string): DataFeedFundedEntity | null {
     return changetype<DataFeedFundedEntity | null>(
-      store.get_in_block("DataFeedFundedEntity", id)
+      store.get_in_block("DataFeedFundedEntity", id),
     );
   }
 
   static load(id: string): DataFeedFundedEntity | null {
     return changetype<DataFeedFundedEntity | null>(
-      store.get("DataFeedFundedEntity", id)
+      store.get("DataFeedFundedEntity", id),
     );
   }
 
@@ -119,7 +119,7 @@ export class NewDataFeedEntity extends Entity {
     if (id) {
       assert(
         id.kind == ValueKind.STRING,
-        `Entities of type NewDataFeedEntity must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
+        `Entities of type NewDataFeedEntity must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`,
       );
       store.set("NewDataFeedEntity", id.toString(), this);
     }
@@ -127,13 +127,13 @@ export class NewDataFeedEntity extends Entity {
 
   static loadInBlock(id: string): NewDataFeedEntity | null {
     return changetype<NewDataFeedEntity | null>(
-      store.get_in_block("NewDataFeedEntity", id)
+      store.get_in_block("NewDataFeedEntity", id),
     );
   }
 
   static load(id: string): NewDataFeedEntity | null {
     return changetype<NewDataFeedEntity | null>(
-      store.get("NewDataFeedEntity", id)
+      store.get("NewDataFeedEntity", id),
     );
   }
 
@@ -213,12 +213,12 @@ export class OneTimeTipClaimedEntity extends Entity {
     let id = this.get("id");
     assert(
       id != null,
-      "Cannot save OneTimeTipClaimedEntity entity without an ID"
+      "Cannot save OneTimeTipClaimedEntity entity without an ID",
     );
     if (id) {
       assert(
         id.kind == ValueKind.STRING,
-        `Entities of type OneTimeTipClaimedEntity must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
+        `Entities of type OneTimeTipClaimedEntity must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`,
       );
       store.set("OneTimeTipClaimedEntity", id.toString(), this);
     }
@@ -226,13 +226,13 @@ export class OneTimeTipClaimedEntity extends Entity {
 
   static loadInBlock(id: string): OneTimeTipClaimedEntity | null {
     return changetype<OneTimeTipClaimedEntity | null>(
-      store.get_in_block("OneTimeTipClaimedEntity", id)
+      store.get_in_block("OneTimeTipClaimedEntity", id),
     );
   }
 
   static load(id: string): OneTimeTipClaimedEntity | null {
     return changetype<OneTimeTipClaimedEntity | null>(
-      store.get("OneTimeTipClaimedEntity", id)
+      store.get("OneTimeTipClaimedEntity", id),
     );
   }
 
@@ -301,7 +301,7 @@ export class TipAddedEntity extends Entity {
     if (id) {
       assert(
         id.kind == ValueKind.STRING,
-        `Entities of type TipAddedEntity must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
+        `Entities of type TipAddedEntity must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`,
       );
       store.set("TipAddedEntity", id.toString(), this);
     }
@@ -309,7 +309,7 @@ export class TipAddedEntity extends Entity {
 
   static loadInBlock(id: string): TipAddedEntity | null {
     return changetype<TipAddedEntity | null>(
-      store.get_in_block("TipAddedEntity", id)
+      store.get_in_block("TipAddedEntity", id),
     );
   }
 
@@ -421,7 +421,7 @@ export class TipClaimedEntity extends Entity {
     if (id) {
       assert(
         id.kind == ValueKind.STRING,
-        `Entities of type TipClaimedEntity must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
+        `Entities of type TipClaimedEntity must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`,
       );
       store.set("TipClaimedEntity", id.toString(), this);
     }
@@ -429,13 +429,13 @@ export class TipClaimedEntity extends Entity {
 
   static loadInBlock(id: string): TipClaimedEntity | null {
     return changetype<TipClaimedEntity | null>(
-      store.get_in_block("TipClaimedEntity", id)
+      store.get_in_block("TipClaimedEntity", id),
     );
   }
 
   static load(id: string): TipClaimedEntity | null {
     return changetype<TipClaimedEntity | null>(
-      store.get("TipClaimedEntity", id)
+      store.get("TipClaimedEntity", id),
     );
   }
 
@@ -517,7 +517,7 @@ export class DataFeedEntity extends Entity {
     if (id) {
       assert(
         id.kind == ValueKind.STRING,
-        `Entities of type DataFeedEntity must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
+        `Entities of type DataFeedEntity must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`,
       );
       store.set("DataFeedEntity", id.toString(), this);
     }
@@ -525,7 +525,7 @@ export class DataFeedEntity extends Entity {
 
   static loadInBlock(id: string): DataFeedEntity | null {
     return changetype<DataFeedEntity | null>(
-      store.get_in_block("DataFeedEntity", id)
+      store.get_in_block("DataFeedEntity", id),
     );
   }
 
